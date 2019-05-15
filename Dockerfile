@@ -4,7 +4,7 @@
 FROM microsoft/dotnet:2.2-aspnetcore-runtime-stretch-slim AS base
 WORKDIR /app
 EXPOSE 80
-ADD Src/MicroServices/FileSvc/VideoSvc/VideoSvc.API/ffmpeg-git-amd64-static.tar.xz /
+ADD /ffmpeg-git-amd64-static.tar.xz /
 RUN mv /ffmpeg*/ffmpeg /usr/bin/ && rm -rf /ffmpeg* 
 
 FROM microsoft/dotnet:2.2-sdk-stretch AS build
